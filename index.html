@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Hà Linh - Digital Art & Design Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            transition:0.3s ease;
+        }
+
+        :root{
+            --bg:#f7faf8;
+            --surface:#ffffff;
+            --text:#12332c;
+            --muted:#5f6f69;
+            --primary:#2f7f73;
+            --primary-light:#dff4ee;
+            --border:#dbe7e2;
+            --shadow:0 10px 25px rgba(0,0,0,0.06);
+        }
+
+        body.dark{
+            --bg:#081310;
+            --surface:#10211d;
+            --text:#edfdf9;
+            --muted:#a6c7c0;
+            --primary:#7de2cf;
+            --primary-light:#18312c;
+            --border:#1f3b36;
+        }
+
+        body{
+            font-family:'Inter',sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            overflow-x:hidden;
+        }
+
+        body::before{
+            content:"";
+            position:fixed;
+            inset:0;
+            background:url('1000010150.jpg') center/cover no-repeat;
+            opacity:0.08;
+            z-index:-2;
+        }
+
+        body::after{
+            content:"";
+            position:fixed;
+            inset:0;
+            background:linear-gradient(to bottom right, rgba(255,255,255,0.85), rgba(255,255,255,0.6));
+            z-index:-1;
+        }
+
+        body.dark::after{
+            background:rgba(0,0,0,0.55);
+        }
+
+        .container{
+            width:min(1150px,92%);
+            margin:auto;
+            padding:25px 0 50px;
+        }
+
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:30px;
+            flex-wrap:wrap;
+            gap:15px;
+        }
+
+        .logo h1{
+            font-size:2rem;
+            font-family:'Space Grotesk',sans-serif;
+            background:linear-gradient(135deg,var(--primary),#79d7c3);
+            -webkit-background-clip:text;
+            color:transparent;
+        }
+
+        .logo p{
+            color:var(--muted);
+            margin-top:4px;
+        }
+
+        .theme-btn{
+            border:none;
+            background:var(--surface);
+            color:var(--text);
+            padding:12px 20px;
+            border-radius:50px;
+            cursor:pointer;
+            font-weight:600;
+            box-shadow:var(--shadow);
+            border:1px solid var(--border);
+        }
+
+        .hero{
+            display:grid;
+            grid-template-columns:1fr 1.2fr;
+            gap:30px;
+            margin-bottom:35px;
+        }
+
+        .card{
+            background:rgba(255,255,255,0.72);
+            backdrop-filter:blur(12px);
+            border:1px solid rgba(255,255,255,0.3);
+            border-radius:28px;
+            padding:28px;
+            box-shadow:var(--shadow);
+        }
+
+        body.dark .card{
+            background:rgba(16,33,29,0.8);
+        }
+
+        .profile-image{
+            width:130px;
+            height:130px;
+            border-radius:50%;
+            overflow:hidden;
+            margin-bottom:20px;
+            border:4px solid rgba(255,255,255,0.7);
+            box-shadow:0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .profile-image img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
+        .tag{
+            display:inline-block;
+            margin:12px 0;
+            padding:8px 18px;
+            background:var(--primary-light);
+            color:var(--primary);
+            border-radius:40px;
+            font-size:0.85rem;
+            font-weight:600;
+        }
+
+        .contact{
+            margin-top:18px;
+        }
+
+        .contact div{
+            margin-bottom:12px;
+            display:flex;
+            gap:12px;
+            align-items:center;
+            color:var(--muted);
+        }
+
+        .contact i{
+            color:var(--primary);
+            width:18px;
+        }
+
+        .btn{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            margin-top:15px;
+            padding:12px 22px;
+            border:none;
+            background:linear-gradient(135deg,var(--primary),#79d7c3);
+            color:white;
+            text-decoration:none;
+            border-radius:40px;
+            font-weight:600;
+            cursor:pointer;
+            box-shadow:0 8px 20px rgba(47,127,115,0.25);
+        }
+
+        .btn:hover{
+            transform:translateY(-3px);
+        }
+
+        .skills{
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+            margin-top:18px;
+        }
+
+        .skill{
+            padding:10px 16px;
+            border-radius:40px;
+            background:var(--primary-light);
+            color:var(--primary);
+            font-weight:600;
+            font-size:0.9rem;
+            cursor:pointer;
+        }
+
+        .skill:hover{
+            background:var(--primary);
+            color:white;
+        }
+
+        h3{
+            margin-bottom:14px;
+        }
+
+        .exp{
+            margin-bottom:20px;
+        }
+
+        .exp-title{
+            display:flex;
+            justify-content:space-between;
+            gap:10px;
+            font-weight:700;
+            flex-wrap:wrap;
+            margin-bottom:6px;
+        }
+
+        .gallery-section{
+            margin-top:25px;
+        }
+
+        .gallery-title{
+            text-align:center;
+            margin-bottom:25px;
+        }
+
+        .gallery-title h2{
+            font-size:2rem;
+            margin-bottom:10px;
+        }
+
+        .gallery-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+        }
+
+        .gallery-item{
+            overflow:hidden;
+            border-radius:24px;
+            position:relative;
+            box-shadow:var(--shadow);
+            height:320px;
+        }
+
+        .gallery-item img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
+        .gallery-item:hover img{
+            transform:scale(1.08);
+        }
+
+        .overlay{
+            position:absolute;
+            inset:0;
+            background:linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+            display:flex;
+            align-items:flex-end;
+            padding:18px;
+            color:white;
+            font-weight:600;
+            letter-spacing:0.5px;
+        }
+
+        .quote-box{
+            margin-top:35px;
+            padding:35px;
+            border-radius:28px;
+            background:url('1000010148.jpg') center/cover no-repeat;
+            position:relative;
+            overflow:hidden;
+            color:white;
+            text-align:center;
+            box-shadow:var(--shadow);
+        }
+
+        .quote-box::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:rgba(0,0,0,0.4);
+        }
+
+        .quote-content{
+            position:relative;
+            z-index:2;
+        }
+
+        .quote-content h2{
+            font-size:2rem;
+            margin-bottom:10px;
+        }
+
+        .socials{
+            display:flex;
+            justify-content:center;
+            gap:15px;
+            margin-top:20px;
+            flex-wrap:wrap;
+        }
+
+        .socials a{
+            text-decoration:none;
+            background:rgba(255,255,255,0.15);
+            border:1px solid rgba(255,255,255,0.2);
+            padding:12px 18px;
+            border-radius:40px;
+            color:white;
+            backdrop-filter:blur(10px);
+        }
+
+        footer{
+            text-align:center;
+            margin-top:35px;
+            color:var(--muted);
+            font-size:0.9rem;
+        }
+
+        @media(max-width:850px){
+            .hero{
+                grid-template-columns:1fr;
+            }
+
+            .gallery-item{
+                height:280px;
+            }
+
+            .quote-content h2{
+                font-size:1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="logo">
+            <h1>Hà Linh Portfolio</h1>
+            <p>Digital Art • Illustration • Creative Design</p>
+        </div>
+
+        <button class="theme-btn" id="themeBtn">
+            <i class="fas fa-moon"></i> Chế độ tối
+        </button>
+    </header>
+
+    <section class="hero">
+
+        <!-- LEFT -->
+        <div class="card">
+
+            <div class="profile-image">
+                <img src="1000010102.jpg" alt="avatar">
+            </div>
+
+            <h2>Nguyễn Hà Linh</h2>
+
+            <div class="tag">
+                Sinh viên Đồ họa Kỹ thuật số
+            </div>
+
+            <p style="color:var(--muted); line-height:1.7;">
+                Yêu thích minh họa số, thiết kế sáng tạo và nghệ thuật mang phong cách nhẹ nhàng,
+                thanh khiết lấy cảm hứng từ thiên nhiên và cảm xúc.
+            </p>
+
+            <div class="contact">
+                <div><i class="fas fa-envelope"></i> linh.nguyen@giadinh.design</div>
+                <div><i class="fas fa-phone"></i> 0908 266 123</div>
+                <div><i class="fab fa-instagram"></i> @halin.creates</div>
+                <div><i class="fab fa-behance"></i> behance.net/halinarts</div>
+            </div>
+
+            <a href="#" class="btn" id="cvBtn">
+                <i class="fas fa-download"></i>
+                Tải Portfolio
+            </a>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="card">
+
+            <h3>
+                <i class="fas fa-palette"></i>
+                Kỹ năng chuyên môn
+            </h3>
+
+            <div class="skills">
+                <span class="skill">Photoshop</span>
+                <span class="skill">Illustrator</span>
+                <span class="skill">Figma</span>
+                <span class="skill">Procreate</span>
+                <span class="skill">After Effects</span>
+                <span class="skill">UI Design</span>
+                <span class="skill">Digital Painting</span>
+                <span class="skill">Branding</span>
+            </div>
+
+            <br>
+
+            <h3>
+                <i class="fas fa-graduation-cap"></i>
+                Học tập & Dự án
+            </h3>
+
+            <div class="exp">
+                <div class="exp-title">
+                    <span>Đại học Gia Định – Digital Design</span>
+                    <span style="color:var(--primary)">2023 - nay</span>
+                </div>
+
+                <p style="color:var(--muted)">
+                    GPA 3.6/4.0 • Tham gia nhiều hoạt động triển lãm nghệ thuật số dành cho sinh viên.
+                </p>
+            </div>
+
+            <div class="exp">
+                <div class="exp-title">
+                    <span>Project “Cảm xúc Sài Gòn”</span>
+                    <span style="color:var(--primary)">2024</span>
+                </div>
+
+                <p style="color:var(--muted)">
+                    Bộ tranh mang màu sắc thiên nhiên và hơi hướng chữa lành bằng nghệ thuật.
+                </p>
+            </div>
+
+            <div class="exp">
+                <div class="exp-title">
+                    <span>Freelance Branding Café</span>
+                    <span style="color:var(--primary)">2025</span>
+                </div>
+
+                <p style="color:var(--muted)">
+                    Thiết kế bao bì, menu và bộ nhận diện thương hiệu cho quán cà phê phong cách tối giản.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section">
+
+        <div class="gallery-title">
+            <h2>Art Gallery</h2>
+            <p style="color:var(--muted)">
+                Một vài tác phẩm mang cảm hứng thiên nhiên & cảm xúc nhẹ nhàng
+            </p>
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="1000010102.jpg" alt="">
+                <div class="overlay">
+                    Lotus Serenity
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="1000010148.jpg" alt="">
+                <div class="overlay">
+                    Soft Cyan Dream
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="1000010149.jpg" alt="">
+                <div class="overlay">
+                    Floating Flower
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="1000010150.jpg" alt="">
+                <div class="overlay">
+                    Abstract Nature
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-box">
+
+        <div class="quote-content">
+            <h2>“Thiết kế không chỉ là hình ảnh — đó là cảm xúc.”</h2>
+
+            <p>
+                Nghệ thuật giúp mình kể câu chuyện bằng màu sắc, ánh sáng và cảm hứng từ thiên nhiên.
+            </p>
+
+            <div class="socials">
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#"><i class="fab fa-behance"></i> Behance</a>
+                <a href="#"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        © 2025 Nguyễn Hà Linh • Interactive Portfolio Website
+    </footer>
+
+</div>
+
+<script>
+
+    // DARK MODE
+    const themeBtn = document.getElementById('themeBtn');
+
+    themeBtn.addEventListener('click', () => {
+
+        document.body.classList.toggle('dark');
+
+        if(document.body.classList.contains('dark')){
+            themeBtn.innerHTML = '<i class="fas fa-sun"></i> Chế độ sáng';
+        }else{
+            themeBtn.innerHTML = '<i class="fas fa-moon"></i> Chế độ tối';
+        }
+
+    });
+
+    // SKILL EFFECT
+    document.querySelectorAll('.skill').forEach(skill => {
+
+        skill.addEventListener('click', () => {
+
+            alert("✨ Kỹ năng: " + skill.innerText);
+
+        });
+
+    });
+
+    // DOWNLOAD BUTTON
+    document.getElementById('cvBtn').addEventListener('click', function(e){
+
+        e.preventDefault();
+
+        alert("📄 Portfolio PDF đang được cập nhật!");
+
+    });
+
+</script>
+
+</body>
+</html>
