@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hà Linh · Digital Artist Portfolio</title>
+
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f6faf3;
+      color: #1f3b1c;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 6%;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #cde2c2;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #1e6b2c;
+      letter-spacing: -0.5px;
+    }
+
+    .logo p {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #4a6b3f;
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2b4b25;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #31823b;
+      border-bottom: 2px solid #6ba85b;
+    }
+
+    /* ========== HERO (ảnh chân dung từ link đầu) ========== */
+    .hero {
+      min-height: 88vh;
+      background: linear-gradient(115deg, #e1f0da 0%, #cde2c0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 6%;
+    }
+
+    .hero-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .hero-img {
+      flex: 1;
+      min-width: 260px;
+      text-align: center;
+    }
+
+    .hero-img img {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 42% 58% 68% 32% / 44% 38% 62% 56%;
+      box-shadow: 20px 25px 40px rgba(49, 84, 35, 0.2);
+      border: 3px solid white;
+      transition: transform 0.3s;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+
+    .hero-img img:hover {
+      transform: scale(1.02);
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .hero-content .tag {
+      background: #2a6b2f30;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: #1d5221;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #1a4f1e;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #2b4a24;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    #exploreBtn {
+      background: #236b2a;
+      border: none;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    #exploreBtn:hover {
+      background: #0e4a15;
+      transform: scale(0.97);
+    }
+
+    .contact-btn {
+      background: transparent;
+      border: 2px solid #236b2a;
+      padding: 0.8rem 1.9rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      color: #236b2a;
+      transition: 0.2s;
+    }
+
+    .contact-btn:hover {
+      background: #236b2a;
+      color: white;
+    }
+
+    /* section chung */
+    .section {
+      padding: 5rem 6%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1e682b;
+      display: inline-block;
+      border-bottom: 3px solid #a1cf91;
+      padding-bottom: 0.5rem;
+    }
+
+    /* about card */
+    .about-card {
+      background: white;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.2rem;
+      border-radius: 2rem;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.04);
+      text-align: center;
+    }
+
+    .about-card p {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      color: #2d4628;
+    }
+
+    /* skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 1.8rem;
+      text-align: center;
+      transition: 0.2s;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
+      border: 1px solid #dfecda;
+    }
+
+    .skill-card i {
+      font-size: 2.5rem;
+      color: #2b8635;
+      margin-bottom: 1rem;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    /* GALLERY (4 ảnh còn lại) */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .gallery-item {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: 0.25s ease;
+      box-shadow: 0 15px 25px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* project list */
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      transition: all 0.2s;
+      border: 1px solid #e2f0db;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-card span {
+      background: #e3f1dd;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #1e682b;
+      display: inline-block;
+      margin: 0.6rem 0;
+    }
+
+    /* CONTACT ———— phong phú + giả */
+    .contact-box {
+      max-width: 720px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #fafdf7;
+      padding: 0.85rem 1.2rem;
+      border-radius: 1.2rem;
+      margin-bottom: 1rem;
+      transition: 0.2s;
+    }
+
+    .contact-row i {
+      width: 44px;
+      height: 44px;
+      background: #e7f3e1;
+      border-radius: 60%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: #1f6a2b;
+    }
+
+    .contact-row:hover {
+      background: #ebf5e6;
+      transform: translateX(6px);
+    }
+
+    .contact-row strong {
+      font-weight: 700;
+      color: #124a1a;
+    }
+
+    .contact-row span {
+      color: #456e3b;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .social-links a {
+      background: #eef4ea;
+      width: 48px;
+      height: 48px;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #236b2a;
+      font-size: 1.5rem;
+      transition: 0.2s;
+    }
+
+    .social-links a:hover {
+      background: #236b2a;
+      color: white;
+      transform: translateY(-4px);
+    }
+
+    .contact-note {
+      margin-top: 1.8rem;
+      background: #e5f3df;
+      padding: 0.8rem;
+      text-align: center;
+      border-radius: 3rem;
+      font-weight: 500;
+      color: #245c20;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #ddecd4;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #2c5c24;
+    }
+
+    @media (max-width: 780px) {
+      .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      header {
+        justify-content: center;
+        gap: 0.8rem;
+      }
+      nav {
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <h1>Hà Linh</h1>
+    <p>Digital Artist & Graphic Designer</p>
+  </div>
+  <nav>
+    <a href="#about">Giới thiệu</a>
+    <a href="#skills">Kỹ năng</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#projects">Dự án</a>
+    <a href="#contact">Liên hệ</a>
+  </nav>
+</header>
+
+<!-- HERO : ảnh từ link đầu tiên 1494790108377... -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="Hà Linh - chân dung">
+    </div>
+    <div class="hero-content">
+      <span class="tag">✦ Portfolio cá nhân ✦</span>
+      <h2>Xin chào, mình là Hà Linh 👋</h2>
+      <p>Sinh viên Đồ họa Kỹ thuật số với tình yêu dành cho nghệ thuật xanh, thiết kế UI và minh họa cảm xúc. Mình tin mỗi sản phẩm là một câu chuyện.</p>
+      <div class="hero-buttons">
+        <button id="exploreBtn">🌿 Khám phá gallery</button>
+        <a href="#contact" class="contact-btn">💬 Liên hệ ngay</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIỚI THIỆU -->
+<section id="about" class="section">
+  <div class="section-title">
+    <h2>Về mình</h2>
+  </div>
+  <div class="about-card">
+    <p>✨ Tên đầy đủ: <strong>Nguyễn Hà Linh</strong> — 21 tuổi, đang sống và làm việc tại TP.HCM.</p>
+    <p>🎨 Mình bắt đầu với vẽ tay từ nhỏ, sau đó chuyển sang digital art và thiết kế chuyên nghiệp. Hiện tại mình tập trung vào Brand Identity, UI/UX và Illustration.</p>
+    <p>🌱 Triết lý của mình: "Thiết kế đẹp phải xanh – cảm xúc và bền vững."</p>
+  </div>
+</section>
+
+<!-- KỸ NĂNG -->
+<section id="skills" class="section">
+  <div class="section-title">
+    <h2>Kỹ năng chuyên môn</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card"><i class="fas fa-palette"></i><h3>Graphic Design</h3><p>Poster, nhận diện thương hiệu, bố cục sáng tạo</p></div>
+    <div class="skill-card"><i class="fas fa-pen-fancy"></i><h3>Digital Art</h3><p>Minh họa nhân vật, phong cảnh, phong cách tối giản</p></div>
+    <div class="skill-card"><i class="fas fa-laptop-code"></i><h3>UI/UX Design</h3><p>Figma, prototype, thiết kế web/app hiện đại</p></div>
+    <div class="skill-card"><i class="fas fa-camera-retro"></i><h3>Photo Editing</h3><p>Chỉnh màu, dựng ảnh, hậu kỳ sáng tạo</p></div>
+  </div>
+</section>
+
+<!-- GALLERY 4 ẢNH (đã tách) -->
+<section id="gallery" class="section">
+  <div class="section-title">
+    <h2>🌿 Green Art Gallery</h2>
+  </div>
+  <div class="gallery">
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="thiên nhiên 1"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="thiên nhiên 2"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="bãi biển xanh"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1200&auto=format&fit=crop" alt="hồ núi"></div>
+  </div>
+</section>
+
+<!-- DỰ ÁN NỔI BẬT -->
+<section id="projects" class="section">
+  <div class="section-title">
+    <h2>Dự án nổi bật</h2>
+  </div>
+  <div class="project-list">
+    <div class="project-card"><h3>🌿 Cảm xúc Sài Gòn</h3><span>2024</span><p>Bộ 6 tranh số về nhịp sống Sài Gòn qua lăng kính xanh, triển lãm mini tại The Factory.</p></div>
+    <div class="project-card"><h3>☕ Green Coffee Branding</h3><span>2025</span><p>Nhận diện thương hiệu cho chuỗi cà phê phong cách tối giản — thiết kế logo, bao bì, menu.</p></div>
+    <div class="project-card"><h3>🍃 Nature UI Concept</h3><span>2025</span><p>Website giả tưởng về bảo tồn thiên nhiên, kết hợp 3D nhẹ và tông xanh dịu mắt.</p></div>
+  </div>
+</section>
+
+<!-- LIÊN HỆ (THÔNG TIN GIẢ CHI TIẾT) -->
+<section id="contact" class="section">
+  <div class="section-title">
+    <h2>Liên hệ</h2>
+  </div>
+  <div class="contact-box">
+    <div class="contact-row"><i class="fas fa-user-circle"></i><div><strong>Hà Linh Nguyễn</strong><br><span>Digital Artist / Freelance Designer</span></div></div>
+    <div class="contact-row"><i class="fas fa-envelope"></i><div><strong>Email chính</strong><br>halinh.art@greenfolio.com</div></div>
+    <div class="contact-row"><i class="fas fa-envelope-open-text"></i><div><strong>Email dự phòng</strong><br>linh.nguyen@creative.vn</div></div>
+    <div class="contact-row"><i class="fas fa-phone-alt"></i><div><strong>Zalo / Di động</strong><br>0908 266 123 (từ 9h - 18h)</div></div>
+    <div class="contact-row"><i class="fab fa-discord"></i><div><strong>Discord</strong><br>halinh.art (ưu tiên chat dự án)</div></div>
+    <div class="contact-row"><i class="fas fa-map-marker-alt"></i><div><strong>Studio</strong><br>Quận 3, TP. Hồ Chí Minh (làm việc online & offline)</div></div>
+
+    <div class="social-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-behance"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-pinterest"></i></a>
+    </div>
+
+    <div class="contact-note">
+      💚 Nhận thiết kế tự do, hợp tác dài hạn & dự án cộng đồng — Cứ inbox, mình sẽ trả lời trong 24h!
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Hà Linh Portfolio — Thiết kế với màu xanh & cảm hứng thuần khiết 🌱</p>
+</footer>
+
+<script>
+  const explore = document.getElementById('exploreBtn');
+  if(explore) {
+    explore.addEventListener('click', () => {
+      document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+</script>
+
+</body>
+</html>
