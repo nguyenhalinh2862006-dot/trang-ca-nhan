@@ -1,4 +1,4 @@
-Trang cá nhân của Nguyễn Hà Linh
+Nguyễn Hà Linh
  -Giới thiệu dự án
 + Đây là dự án website portfolio cá nhân của Nguyễn Hà Linh nhằm giới thiệu bản thân, kỹ năng và các sản phẩm sáng tạo trong quá trình học tập ngành Đồ họa Kỹ thuật số.
 + Website được xây dựng với phong cách hiện đại, tối giản và tập trung vào trải nghiệm người dùng. Dự án giúp rèn luyện kỹ năng thiết kế giao diện, lập trình Front-end và ứng dụng AI trong quá trình phát triển sản phẩm.
