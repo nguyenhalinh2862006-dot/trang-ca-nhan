@@ -94,8 +94,3 @@ Trong tương lai, website sẽ được nâng cấp thêm:
 - Hoàn thiện portfolio chuyên nghiệp hơn
 
 ---
-
-# Tác giả
-
-Nguyễn Hà Linh
-Sinh viên ngành Đồ họa Kỹ thuật số – Đại học Gia Định
